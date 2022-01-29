@@ -1,0 +1,14 @@
+class HeadlineSource:
+
+
+
+
+
+
+
+
+
+
+
+class HeadlineArticle:
+  
