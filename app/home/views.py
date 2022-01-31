@@ -6,4 +6,5 @@ def index():
   '''
   The view root page function that renders the index page and its data contents
   '''
-  return render_template('index.html')
+  message ='Howdy World'
+  return render_template('index.html', message = message)
