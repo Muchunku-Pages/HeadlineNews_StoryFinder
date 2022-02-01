@@ -1,4 +1,4 @@
-class HeadlineSource:
+class HeadlineCategory:
 
 
 
