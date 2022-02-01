@@ -23,10 +23,8 @@ def article():
 @home.route('/category/')
 def category(category_name):
     '''
-     Returns the category.html page and its content
+     Return the category.html page and its content
     '''
-    category = get_category(category_name)
-    title = get_category(f'{category_name}')
-    category_name = category
+   
 
     return render_template('categories.html')
