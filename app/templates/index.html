@@ -1,0 +1,42 @@
+{% extends 'home.html' %}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="row col-sm-4">
+            <h4>Browse Headlines By News Source</h4>
+            <div class="list-group list-group-flush scrolly">
+                <ul>
+                    {% for source in sources %}
+                    <a href="/article/{{source.id}}">
+                        <p class="card-text">{{source.id}}</p>
+                    </a>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        <div class="row col-sm-4">
+            {% for headline in headlines %}
+            <div class="card">
+                <img src="{{headline.image}}" width="400px" alt="Card image cap">
+                    <div class=" card-body">
+                <h5 class="card-title">{{headline.author}}</h5>
+                <p class="card-text">{{headline.description}}</p>
+                <a href="{{headline.url}}"
+                    class="btn btn-outline-secondary btn-lg">Visit Headline Source
+                </a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Publish date:{{headline.time}}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}
+

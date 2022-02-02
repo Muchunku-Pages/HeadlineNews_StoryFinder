@@ -1,5 +1,5 @@
 from flask import render_template
-from . import main
+from . import home
 
 @home.errorhandler(404)
 def four_ow_four(error):
