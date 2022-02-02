@@ -36,6 +36,6 @@ def category(category_name):
 
     category = get_category(category_name)
     title = get_category(f'{category_name}')
-    category_name = category
+    category = category
 
-    return render_template('categories.html',title = title, category = category, category_name= category_name)
+    return render_template('category.html',title = title, category = category)
