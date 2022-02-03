@@ -1,7 +1,7 @@
 from flask import render_template
-from . import home
+from . import main
 
-@home.errorhandler(404)
+@main.errorhandler(404)
 def four_ow_four(error):
     '''
     Function to render the 404 error page

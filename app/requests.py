@@ -1,18 +1,16 @@
-import urllib.request,json
-from .models import Article, Category, Source , Headlines
+import urllib, json
+from config import Config
+from .models import Article, Category, Source, Headline
 
-# Getting api key
-api_key = None
-# Getting source url
-source_url= None
-# Getting source url
-category_url= None
+api_key = Config.NEWS_API_KEY
+source_url = Config.NEWS_API_SOURCE_URL
+category_url = Config.CATEGORY_API_URL
 
 def configure_request(app):
     global api_key, source_url, category_url
-    api_key = app.config['NEWS_API_KEY']
-    source_url= app.config['NEWS_API_SOURCE_URL']
-    category_url=app.config['CATEGORY_API_URL']
+    api_key = app.Config['NEWS_API_KEY']
+    source_url = app.Config['NEWS_API_SOURCE_URL']
+    category_url = app.Config['CATEGORY_API_URL']
 
 
 def get_source():
@@ -29,7 +27,7 @@ def get_source():
 
         if get_source_response['sources']:
             source_result_list = get_source_response['sources']
-            source_result = process_result(source_result_list)
+            source_result = process_results(source_result_list)
 
     return source_result
 
@@ -54,7 +52,7 @@ def process_results(source_list):
     return source_results
 
 def article_source(id):
-    article_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
+    article_source_url = 'https://newsapi.org/v2/top-headlines?sources?apiKey={}'.format(api_key)
     print(article_source_url)
     with urllib.request.urlopen(article_source_url) as url:
         article_source_data = url.read()
@@ -80,12 +78,11 @@ def process_article_result(news):
         time = article.get('publishedAt')
         url = article.get('urlToImage')
         image = article.get('url')
-        title = article.get ('title')
+        title = article.get('title')
 
         if url:
             article_object = Article(author,description,time,image,url,title)
-            article_source_result.append(article_objects)
-
+            article_source_result.append(article_object)
     return article_source_result
 
 def get_category(category_name):
@@ -111,7 +108,7 @@ def get_headline():
     Obtain the headline data from the retrieved stringified json headline results
     '''
     get_headline_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
-    print(get_headlines_url)
+    print(get_headline_url)
     with urllib.request.urlopen(get_headline_url) as url:
         get_headline_data = url.read()
         get_headline_response = json.loads(get_headline_data)

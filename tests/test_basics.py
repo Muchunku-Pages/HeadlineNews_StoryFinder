@@ -20,6 +20,6 @@ class BasicsTestCase(unittest.TestCase):
 
     def test_app_exists(self):
         '''
-        Method to test the current application instance's existence is true (or false).
+        Test method to test the current application instance's existence is true (or false).
         '''
         self.assertFalse(current_app is None)

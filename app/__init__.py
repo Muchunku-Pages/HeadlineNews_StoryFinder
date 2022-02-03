@@ -1,7 +1,10 @@
+from ensurepip import bootstrap
+from .main import main as main_blueprint
+from .requests import configure_request
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from config import config_options
-from .request import configure_request
+
 
 def create_app(config_name):
 
@@ -12,11 +15,11 @@ def create_app(config_name):
 
    
 # Register Blueprint
-    from .home import home as home_blueprint
-    app.register_blueprint(home_blueprint)
+
+    app.register_blueprint(main_blueprint)
 
 # Set config
-    from .request import configure_request
+
     configure_request(app)
 
  # To add views and forms
