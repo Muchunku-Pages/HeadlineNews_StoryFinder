@@ -12,32 +12,34 @@ def home():
   '''
  
   source= get_source()
+  print(source)
+
   headline = get_headline()
-  return render_template('main.html',source=source, headline = headline)
+  return render_template('index.html',source=source, headline = headline)
 
 
-# @main.route('/article')
-# def article():
-#
-#   '''
-#   Returns the article page containing the various article details and data
-#   '''
-#
-#
-#   article = article_source(id)
-#   return render_template('article.html',article= article,id=id )
+@main.route('/article')
+def article():
+
+  '''
+  Returns the article page containing the various article details and data
+  '''
 
 
-# @main.route('/category/<category_name>')
-# def category(category_name):
-#
-#     '''
-#     Return the category.html page and its content
-#     '''
-#
-#
-#     category = get_category(category_name)
-#     title = get_category(f'{category_name}')
-#     category = category
-#
-#     return render_template('category.html',title = title, category = category)
+  article = article_source(id)
+  return render_template('article.html',article= article,id=id )
+
+
+@main.route('/category/<category_name>')
+def category(category_name):
+
+    '''
+    Return the category.html page and its content
+    '''
+
+
+    category = get_category(category_name)
+    title = get_category(f'{category_name}')
+    category = category
+
+    return render_template('category.html', title = title, category = category)
