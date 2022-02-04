@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    {{block.super}}
+{{super}}
 <br>
 <br>
 <br>
@@ -12,17 +12,17 @@
             {% for article in articles %}
 
             <div class="card">
-                <img class="card" src="{{article.image}}" alt="Card image cap" width=50%>
+                <img class="card" src="{{article.image}}" width=720px alt="Card image cap" >
                 <div class="card-body">
-                    <h5 class="card-title">{{article.author}}</h5>
-                    <p class="card-text">{{article.description}}</p>
+                    <h6 class="card-title">{{article.author}}</h6>
+                    <h4 class="card-text">{{article.description}}</h4>&nbsp;
                     <a href="{{article.url}}">
-                        <p class="card-text">For the Full Story click here</p>
+                        <p class="card-text">Click Here For The Full Story</p>
                     </a>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">Article date:{{article.time}}</small>
-                </div>
+                </div><br>
             </div>
             {% endfor %}
         </div>

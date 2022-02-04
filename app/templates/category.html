@@ -2,32 +2,29 @@
 
 {% block content %}
 
-<h1 class="align-center" class="text-uppercase">{{title}} News
-    </h1>
+<h2 class="container-fluid align-center text-uppercase">{{title}} News</h2>&nbsp;
     <div class="container">
         <div class="row row-cols-1">
-            <div class="raw">
-
-
-            <div class="row col-sm-12">
+              <div class="row col-sm-10">
 
                 {% for category in category %}
                 <div class="card">
-                    <img src="{{category.image}}" width="900px" alt="Card image cap" >
+                    <img src="{{category.image}}" width="620px" alt="Card image cap" >
                     <div class="card-body">
-                        <h3 class="card-title">{{category.author}}</h3>
-                       <h4 class="card-text">{{category.description}}</h4>
+                        <h6 class="card-title">{{category.author}}</h6>
+                       <h4 class="card-text">{{category.description}}</h4><br>
                         <a href="{{category.url}}"
-                             class="btn btn-outline-secondary btn-lg">For The Full Story Click Here
+                             class="btn btn-outline-secondary btn-lg">Click Here For The Full Story
                         </a>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Publish date:{{category.time}}</small>
-                    </div>
-                </div>
+                        <small class="text-muted">Date Published:{{category.time}}</small>
+                    </div><br>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
                 {% endfor %}
-                </div>
-            </div>
+              </div>
         </div>
     </div>
+<br>
     {% endblock %}
+<br>

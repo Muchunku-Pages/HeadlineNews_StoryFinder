@@ -5,7 +5,10 @@ from app import create_app
 class BasicsTestCase(unittest.TestCase):
     def setUp(self):
         '''
-        Set up Method to prepare the test fixture. To be called initially before calling the test method; other than AssertionError or SkipTest, any exception raised by this method will be considered an error rather than a test failure.
+        Set up Method to prepare the test feature.
+        To be initialized before calling the test method;
+        Apart from the AssertionError or SkipTest, any exception raised by this method
+        will be considered an error rather than a test failure.
         '''
         self.app = create_app('development')
         self.app_context = self.app.app_context()

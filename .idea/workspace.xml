@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="805f5e0b-b7b7-49f3-a13f-d0c214ce4929" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/requests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/fourOhfour.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/fourOhfour.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/includes/_navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/includes/_navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_article.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_basics.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_basics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_category.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_headline.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_headline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_sources.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_sources.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +40,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/templates/includes" />
       <recent name="$PROJECT_DIR$/app/templates" />

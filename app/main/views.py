@@ -12,9 +12,8 @@ def source():
   '''
  
   source= get_source()
-  #print(source)
-
   headline = get_headline()
+  css_styles = url_for('static',filename='index.css')
   return render_template('index.html',source = source, headline = headline)
 
 

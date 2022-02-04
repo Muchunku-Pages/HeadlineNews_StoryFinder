@@ -16,8 +16,8 @@ def get_source():
     '''
     Retrieve the stringified json response to url request
     '''
-    get_source_url= source_url.format(api_key)
-   # print(get_source_url)
+    get_source_url = source_url.format(api_key)
+
 
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
@@ -53,7 +53,7 @@ def process_results(source_list):
 
 def article_source(id):
     article_source_url = 'https://newsapi.org/v2/top-headlines?sources?apiKey={}'.format(api_key)
-    #print(article_source_url)
+
     with urllib.request.urlopen(article_source_url) as url:
         article_source_data = url.read()
         article_source_response = json.load(article_source_data)#
@@ -87,8 +87,6 @@ def get_category(category_name):
     return get_category_result
 
 
-
-
 def process_article_result(news):
     '''
     Process the json articles files from the api key
@@ -113,7 +111,7 @@ def get_headline():
     Obtain the headline data from the retrieved stringified json headline results
     '''
     get_headline_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
-    #print(get_headline_url)
+
     with urllib.request.urlopen(get_headline_url) as url:
         get_headline_data = url.read()
         get_headline_response = json.loads(get_headline_data)
