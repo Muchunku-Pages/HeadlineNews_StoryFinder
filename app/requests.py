@@ -17,9 +17,8 @@ def get_source():
     Retrieve the stringified json response to url request
     '''
     get_source_url= source_url.format(api_key)
-    print('rrrrrrrrrrrrrrrrr')
-    print(get_source_url)
-    print('ttttttttttttttt')
+   # print(get_source_url)
+
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
@@ -54,7 +53,7 @@ def process_results(source_list):
 
 def article_source(id):
     article_source_url = 'https://newsapi.org/v2/top-headlines?sources?apiKey={}'.format(api_key)
-    print(article_source_url)
+    #print(article_source_url)
     with urllib.request.urlopen(article_source_url) as url:
         article_source_data = url.read()
         article_source_response = json.load(article_source_data)#
@@ -67,6 +66,28 @@ def article_source(id):
 
 
     return article_source_result
+
+def get_category(category_name):
+    '''
+    Obtain the category data from the retrieved stringified json category results
+    '''
+
+    get_category_url = 'https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'.format(category_name, api_key)
+
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_category_response = json.loads(get_category_data)
+
+        get_category_result = None
+
+        if get_category_response['articles']:
+            get_category_list = get_category_response['articles']
+            get_category_result = process_article_result(get_category_list)
+
+    return get_category_result
+
+
+
 
 def process_article_result(news):
     '''
@@ -86,30 +107,13 @@ def process_article_result(news):
             article_source_result.append(article_object)
     return article_source_result
 
-def get_category(category_name):
-    '''
-    Obtain the category data from the retrieved stringified json category results
-    '''
-    get_category_url = category_url.format(category_name,api_key)
-    print(get_category_url)
-    with urllib.request.urlopen(get_category_url) as url:
-        get_category_data = url.read()
-        get_category_response = json.loads(get_category_data)
-
-        get_category_result = None
-
-        if get_category_response['articles']:
-            get_category_list = get_category_response['articles']
-            get_category_result = process_article_result(get_category_list)
-
-    return get_category_result
 
 def get_headline():
     '''
     Obtain the headline data from the retrieved stringified json headline results
     '''
     get_headline_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
-    print(get_headline_url)
+    #print(get_headline_url)
     with urllib.request.urlopen(get_headline_url) as url:
         get_headline_data = url.read()
         get_headline_response = json.loads(get_headline_data)
@@ -121,3 +125,4 @@ def get_headline():
             get_headline_result = process_article_result(get_headline_list)
 
     return get_headline_result
+

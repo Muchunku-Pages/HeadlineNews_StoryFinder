@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 
-<h1 class="align-center" class="text-uppercase">{{title}} NEWS
-    </h3>
+<h1 class="align-center" class="text-uppercase">{{title}} News
+    </h1>
     <div class="container">
-        <div class="row row-cols-3">
+        <div class="row row-cols-1">
             <div class="raw">
-                {% for category in categories %}
 
 
+            <div class="row col-sm-12">
+
+                {% for category in category %}
                 <div class="card">
-                    <img class="card" src="{{category.image}}" alt="Card image cap" width="400px">
+                    <img src="{{category.image}}" width="900px" alt="Card image cap" >
                     <div class="card-body">
-                        <h5 class="card-title">{{category.author}}</h5>
-                        <p class="card-text">{{category.description}}</p>
+                        <h3 class="card-title">{{category.author}}</h3>
+                       <h4 class="card-text">{{category.description}}</h4>
                         <a href="{{category.url}}"
-                             class="btn btn-outline-secondary btn-lg">Click Here For More
+                             class="btn btn-outline-secondary btn-lg">For The Full Story Click Here
                         </a>
                     </div>
                     <div class="card-footer">
@@ -24,7 +26,7 @@
                     </div>
                 </div>
                 {% endfor %}
-
+                </div>
             </div>
         </div>
     </div>

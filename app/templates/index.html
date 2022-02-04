@@ -1,16 +1,18 @@
-{% extends 'base.html' %}
+{% extends 'layout.html' %}
+
 {% block styles%}
-//{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='.static/css/index.css')}}">
 {% endblock %}
+
 {% block content %}
+    {{super}}
 <div class="container-fluid">
     <div class="row">
         <div class="row col-sm-4">
             <h4>Browse Headlines By News Source</h4>
-            <div class="list-group list-group-flush scrolly">
+            <div class="list-group list-group-flush scroll">
                 <ul>
-                    {% for source in sources %}
+                    {% for source in source %}
                     <a href="/article/{{source.id}}">
                         <p class="card-text">{{source.id}}</p>
                     </a>
@@ -20,7 +22,7 @@
             </div>
         </div>
         <div class="row col-sm-4">
-            {% for headline in headlines %}
+            {% for headline in headline %}
             <div class="card">
                 <img src="{{headline.image}}" width="400px" alt="Card image cap">
                     <div class=" card-body">
